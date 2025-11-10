@@ -130,7 +130,7 @@ def main():
                 print("Invalid input. Please try again.")
                 continue
             inventory.insert(pid, Product(pid, name, cat, price, qty))
-            print("✅ Product added successfully!")
+            print(" Product added successfully!")
 
         elif choice == "2":
             pid = input("Enter Product ID to search: ").strip()
@@ -143,7 +143,7 @@ def main():
                 print(product)
                 print("-" * 55)
             else:
-                print("❌ Product not found!")
+                print(" Product not found!")
 
         elif choice == "3":
             pid = input("Enter Product ID to edit: ").strip()
@@ -159,28 +159,28 @@ def main():
                     continue
                 product.price = new_price
                 product.quantity = new_qty
-                print("✅ Product updated successfully!")
+                print(" Product updated successfully!")
             else:
-                print("❌ Product not found!")
+                print(" Product not found!")
 
         elif choice == "4":
             pid = input("Enter Product ID to delete: ").strip()
             deleted = inventory.delete(pid)
             if deleted:
-                print("🗑️ Product deleted successfully!")
+                print(" Product deleted successfully!")
             else:
-                print("❌ Product not found!")
+                print(" Product not found!")
 
         elif choice == "5":
             all_products = inventory.get_all_products()
             if all_products:
-                print("\n📦 Current Inventory List:")
+                print("\n Current Inventory List:")
                 show_table(all_products)
             else:
                 print("No products available.")
 
         elif choice == "6":
-            print("👋 Exiting system... Goodbye!")
+            print(" Exiting system... Goodbye!")
 
         else:
             print("Invalid choice. Please enter 1–6.")
